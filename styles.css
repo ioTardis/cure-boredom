@@ -30,11 +30,13 @@ body {
 .menu {
     padding: 20px;
     border: 1px black solid;
+    max-width: 400px;
 }
 
 .activity {
     border: 1px black solid;
     padding: 20px;
+    max-width: 600px;
 }
 
 .footer {

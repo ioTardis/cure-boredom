@@ -22,7 +22,13 @@ function getActivity() {
             activityType.textContent = `Activity type: ${data['type']}`;
             activityPart.textContent = `Number of participants: ${data['participants']}`;
             activityPrice.textContent = `Activity price: ${data['price']}`;
-            activityLink.setAttribute('href', data['link']);
+            if (data['link'] != '') {
+                activityLink.textContent = '';
+                const a = document.createElement('a');
+                a.setAttribute('href', data['link']);
+                a.textContent = 'Link';
+                activityLink.appendChild(a);
+            } else activityLink.textContent = 'No link';
             activityAccess.textContent = `Activity accessibility: ${data['accessibility']}`;
         })
         .catch(function(error) {
