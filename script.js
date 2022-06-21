@@ -1,4 +1,28 @@
 const sendBtn = document.querySelector('#send-request');
+const typeBtn = document.querySelector('#typeBtn');
+const partBtn = document.querySelector('#partBtn');
+const priceBtn = document.querySelector('#priceBtn');
+const typeInput = document.querySelector('#type');
+const partInput = document.querySelector('#participants');
+const priceInput = document.querySelector('#price');
+
+typeBtn.addEventListener('click', () => {
+    typeInput.disabled = false;
+    partInput.disabled = true;
+    priceInput.disabled = true;
+});
+
+partBtn.addEventListener('click', () => {
+    partInput.disabled = false;
+    typeInput.disabled = true;
+    priceInput.disabled = true;
+});
+
+priceBtn.addEventListener('click', () => {
+    priceInput.disabled = false;
+    partInput.disabled = true;
+    typeInput.disabled = true;
+});
 
 sendBtn.addEventListener('click', getActivity);
 

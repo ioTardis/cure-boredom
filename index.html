@@ -12,10 +12,8 @@
     </div>
     <div class="container">
         <div class="menu">
-            <label for="key">Activity key (1000000-9999999):</label>
-            <input type="number" id="key" name="key" min="1000000" max="9999999"><br>
-            <label for="type">Type of activity: </label>
-            <select name="type" id="type">
+            <label for="type" id="typeBtn">Type of activity: </label>
+            <select name="type" id="type" disabled>
                 <option value="" selected="selected" hidden="hidden">Choose here</option>
                 <option value="education">Education</option>
                 <option value="recreational">Recreational</option>
@@ -27,15 +25,13 @@
                 <option value="music">Music</option>
                 <option value="busywork">Busywork</option>
             </select><br>
-            <label for="participants">Number of participants (0 - N):</label>
-            <input type="number" name="participants" id="participants"><br>
-            <span>Price: </span>
-            <label for="price-free">Free</label>
-            <input type="radio" name="price" id="price-free" value="0">
-            <label for="price">Not free</label>
-            <input type="radio" name="price" id="price" value="1"><br>
-            <label for="accessibility">Accessibility (0.0 - 1.0): </label>
-            <input type="number" name="accessibility" id="accessibility"><br>
+
+            <label for="participants" id="partBtn">Number of participants (0 - N):</label>
+            <input type="number" name="participants" id="participants" disabled><br>
+
+            <label for="price" id="priceBtn">Price (0 - 1): </label>
+            <input type="number" name="price" id="price" disabled><br>
+
             <button id="send-request">Find something!</button>
         </div>
         <div class="activity">
