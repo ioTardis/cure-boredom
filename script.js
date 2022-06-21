@@ -9,29 +9,40 @@ const priceInput = document.querySelector('#price');
 typeBtn.addEventListener('click', () => {
     typeInput.disabled = false;
     partInput.disabled = true;
+    partInput.value = '';
     priceInput.disabled = true;
+    priceInput.value = '';
 });
 
 partBtn.addEventListener('click', () => {
     partInput.disabled = false;
     typeInput.disabled = true;
+    typeInput.value = '';
     priceInput.disabled = true;
+    priceInput.value = '';
 });
 
 priceBtn.addEventListener('click', () => {
     priceInput.disabled = false;
     partInput.disabled = true;
+    partInput.value = '';
     typeInput.disabled = true;
+    typeInput.value = '';
 });
 
 sendBtn.addEventListener('click', getActivity);
 
 function getActivity() {
-    const keyField = document.querySelector('#key').value;
-    console.log(keyField);
-    if (keyField != 0) {
-        const api = 'http://www.boredapi.com/api/activity/';
-        let url = api + '?key=' + keyField;
+    const api = 'http://www.boredapi.com/api/activity/';
+    let url = '';
+    if (typeInput.value != '') {
+        url = api + '?type=' + typeInput.value;
+    } else if (partInput.value != '') {
+        url = api + '?participants=' + partInput.value;
+    } else if (priceInput.value != '') {
+        url = api + '?price=' + priceInput.value;
+    } else url = api;
+
     fetch(url)
         .then((response) => {
             return response.json();
@@ -43,7 +54,6 @@ function getActivity() {
         .catch(function(error) {
             console.log(error);
         });
-    }
 }
 
 function displayActivity(data) {
