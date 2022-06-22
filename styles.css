@@ -13,11 +13,32 @@ body {
     flex-direction: column;
     align-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .header {
     display: flex;
     height: 150px;
+    font-size: 30px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    background-color: #B4DFE5;
+    padding: 20px;
+}
+
+.description h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.description p {
+    text-align: center;
+    font-size: 20px;
 }
 
 .container {
@@ -25,18 +46,33 @@ body {
     flex-direction: row;
     justify-content: center;
     gap: 40px;
+    width: 70%;
 }
 
 .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 20px;
-    border: 1px black solid;
-    max-width: 400px;
+    font-size: 20px;
+    width: 50%;
+    background-color: #303C6C;
+    color: white;
 }
 
 .activity {
-    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 20px;
-    max-width: 600px;
+    font-size: 20px;
+    width: 50%;
+    background-color: #F4976C;
+}
+
+.activity span {
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .footer {
