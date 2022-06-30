@@ -81,3 +81,8 @@ body {
     text-align: center;
     flex-shrink: 0;
 }
+
+a {
+    text-decoration: none;
+    color: rgb(82, 80, 80);
+}
