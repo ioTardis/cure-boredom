@@ -86,3 +86,23 @@ a {
     text-decoration: none;
     color: rgb(82, 80, 80);
 }
+
+button {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #B4DFE5;
+    background-color: #D2FDFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    font-weight:300;
+    color: #303C6C;
+    text-align:center;
+    transition: all 0.2s;
+    font-size: 20px;
+}
+
+button:hover{
+    color:#303C6C;
+    background-color:#d7e8eb;
+}
