@@ -2,6 +2,7 @@ const sendBtn = document.querySelector('#send-request');
 const typeBtn = document.querySelector('#typeBtn');
 const partBtn = document.querySelector('#partBtn');
 const priceBtn = document.querySelector('#priceBtn');
+const clearBtn = document.querySelector('#clear-parameters');
 const typeInput = document.querySelector('#type');
 const partInput = document.querySelector('#participants');
 const priceInput = document.querySelector('#price');
@@ -31,6 +32,10 @@ priceBtn.addEventListener('click', () => {
 });
 
 sendBtn.addEventListener('click', getActivity);
+
+clearBtn.addEventListener('click', () => {
+    document.location.reload();
+})
 
 function getActivity() {
     const api = 'http://www.boredapi.com/api/activity/';
