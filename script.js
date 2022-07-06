@@ -1,3 +1,5 @@
+//Targeting input DOM nodes with selectors
+
 const sendBtn = document.querySelector('#send-request');
 const typeBtn = document.querySelector('#typeBtn');
 const partBtn = document.querySelector('#partBtn');
@@ -7,6 +9,8 @@ const typeInput = document.querySelector('#type');
 const partInput = document.querySelector('#participants');
 const priceInput = document.querySelector('#price');
 
+//Activation parameter "type" input
+
 typeBtn.addEventListener('click', () => {
     typeInput.disabled = false;
     partInput.disabled = true;
@@ -14,6 +18,8 @@ typeBtn.addEventListener('click', () => {
     priceInput.disabled = true;
     priceInput.value = '';
 });
+
+//Activation parameter "participants" input
 
 partBtn.addEventListener('click', () => {
     partInput.disabled = false;
@@ -23,6 +29,8 @@ partBtn.addEventListener('click', () => {
     priceInput.value = '';
 });
 
+//Activation parameter "price" input
+
 priceBtn.addEventListener('click', () => {
     priceInput.disabled = false;
     partInput.disabled = true;
@@ -31,11 +39,15 @@ priceBtn.addEventListener('click', () => {
     typeInput.value = '';
 });
 
+//Event for sending an API request
+
 sendBtn.addEventListener('click', getActivity);
 
 clearBtn.addEventListener('click', () => {
     document.location.reload();
 })
+
+//Function to construct and send an API request
 
 function getActivity() {
     const api = 'http://www.boredapi.com/api/activity/';
@@ -54,16 +66,17 @@ function getActivity() {
         })
         .then((data) => {
             displayActivity(data);
-            console.log(data);
         })
         .catch(function(error) {
-            console.log(error);
         });
 }
 
+//Rendering function for received activity
+
 function displayActivity(data) {
-    // const activityDiv = document.querySelector('.activity');
-    // if (data['error'] != 0) activityDiv.textContent = 'No activity with this key';
+
+    //Targeting DOM nodes for displaying activity
+
     const activityName = document.querySelector('#activity-name');
     const activityKey = document.querySelector('#activity-key');
     const activityType = document.querySelector('#activity-type');
@@ -77,6 +90,10 @@ function displayActivity(data) {
     activityType.textContent = `Activity type: ${data['type']}`;
     activityPart.textContent = `Number of participants: ${data['participants']}`;
     activityPrice.textContent = `Activity price: ${data['price']}`;
+    activityAccess.textContent = `Activity accessibility: ${data['accessibility']}`;
+    
+    //Rendering a link
+
     if (data['link'] != '') {
         activityLink.textContent = '';
         const a = document.createElement('a');
@@ -84,5 +101,4 @@ function displayActivity(data) {
         a.textContent = 'Link';
         activityLink.appendChild(a);
     } else activityLink.textContent = 'No link';
-    activityAccess.textContent = `Activity accessibility: ${data['accessibility']}`;
 }
