@@ -60,6 +60,32 @@ body {
     color: white;
 }
 
+input {
+    display: block;
+    width: 60%;
+    margin-top: 5px;
+    padding: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+}
+
+select {
+    display: block;
+    width: 40%;
+    margin-top: 5px;
+    padding: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+}
+
 .activity {
     display: flex;
     flex-direction: column;
