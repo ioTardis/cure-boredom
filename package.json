@@ -1,0 +1,25 @@
+{
+  "name": "cure-boredom",
+  "version": "1.0.0",
+  "description": "a small project that calls The Bored API to get ideas if you're bored",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ioTardis/cure-boredom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ioTardis/cure-boredom/issues"
+  },
+  "homepage": "https://github.com/ioTardis/cure-boredom#readme",
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
